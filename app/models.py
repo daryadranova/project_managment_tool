@@ -103,6 +103,8 @@ class Costs(Base):
     creator_id = Column(Integer,
                         ForeignKey("Users.id",
                                    ondelete="CASCADE"))
+    # paid = Column(Float, nullable=True)
+    # due = Column(Float, nullable=True)
     in_archive = Column(Boolean, nullable=False, server_default="False")
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=True,

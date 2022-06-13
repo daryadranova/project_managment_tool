@@ -37,6 +37,7 @@ def create_transaction(transactions: schemas.Transactions,
 # если есть доступ к проекту
 
 
+
 @router.get("/",
             response_model=List[schemas.Transactions])
 # чтобы нормально показывало, должны быть заполнены все поля в schemas
