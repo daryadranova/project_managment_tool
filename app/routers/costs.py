@@ -112,5 +112,4 @@ def update_cost(id: int, updated_cost: schemas.Costs,
     cost_query.update(updated_cost.dict(), synchronize_session=False)
     db.commit()
 
-    # как проверить что вводимый проект существует
     return cost_query.first()
