@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .database import engine
+# from .database import engine
 from .routers import projects, users, auth, access, transactions, costs, accounts
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Request
@@ -33,6 +33,7 @@ app.include_router(costs.router)
 app.include_router(accounts.router)
 
 
+@app.get("/")
 async def home(request: Request):
     return templates.TemplateResponse(
         "index.html", {"request": request})
