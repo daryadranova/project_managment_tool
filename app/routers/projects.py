@@ -13,8 +13,7 @@ templates = Jinja2Templates(directory="templates")
 
 
 @router.post("/",
-             status_code=status.HTTP_201_CREATED,
-             response_class=schemas.ProjectResponce)
+             status_code=status.HTTP_201_CREATED)
 def create_project(projects: schemas.ProjetCreate,
                    db: Session = Depends(get_db),
                    current_user: int = Depends(oauth2.get_current_user)):
@@ -24,7 +23,7 @@ def create_project(projects: schemas.ProjetCreate,
     # new_project = cursor.fetchone()
     # connection.commit()
     new_project = models.Projects(owner_id=current_user.id, **projects.dict())
-    db.add(new_project)
+    db.add(new_project) 
     db.commit()
     db.refresh(new_project)
     return new_project
