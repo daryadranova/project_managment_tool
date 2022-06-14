@@ -5,7 +5,7 @@ from .routers import projects, users, auth, access, transactions, costs, account
 from fastapi.middleware.cors import CORSMiddleware
 
 
-models.Base.metadata.create_all(bind=engine)
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
