@@ -130,6 +130,7 @@ class Costs(BaseModel):
     supplier: Optional[str] = "Name of the supplier"
     amount_of_money: float
     in_archive: bool
+    id: int
 
     class Config:
         orm_mode = True
@@ -143,6 +144,7 @@ class CostsResponce(BaseModel):
     amount_of_money: float
     in_archive: bool
     project: ProjectResponce
+    id: int
 
     class Config:
         orm_mode = True
