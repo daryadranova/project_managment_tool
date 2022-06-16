@@ -27,6 +27,7 @@ app.include_router(auth.router)
 app.include_router(access.router)
 app.include_router(transactions.router)
 app.include_router(costs.router)
+app.include_router(accounts.router)
 
 
 @app.get("/")
